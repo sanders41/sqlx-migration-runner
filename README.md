@@ -46,3 +46,9 @@ services:
 volumes:
   db-data:
 ```
+
+## How To Pull The container
+
+```sh
+docker pull ghcr.io/sanders41/sqlx-migration-runner:latest
+```
