@@ -36,6 +36,7 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}
           tags: |
             type=ref,event=tag
+            type=semver,pattern={{major}}
             type=raw,value=latest
 
       - name: Build and push Docker image
