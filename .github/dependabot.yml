@@ -6,4 +6,4 @@ updates:
       interval: daily
     labels:
       - dependencies
-      - github-actions
+      - skip-changelog
