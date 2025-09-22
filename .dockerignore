@@ -1,0 +1,7 @@
+README.md
+LICENSE
+.github
+.git
+Dockerfile
+docker-compose*
+.pre-commit-config.yaml
