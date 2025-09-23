@@ -6,9 +6,11 @@ on:
       - main
   pull_request:
 jobs:
-  docker-build:
+  docker-build-and-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
       - name: Build container
         run: docker build .
+      - name: Run tests
+        run: cd tests && ./run_test.sh
