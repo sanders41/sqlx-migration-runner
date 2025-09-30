@@ -1,4 +1,4 @@
-FROM rust:1.89-alpine3.22 AS builder
+FROM rust:1-alpine3.22 AS builder
 
 RUN apk add --no-cache \
     build-base \
