@@ -9,7 +9,7 @@ jobs:
   docker-build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: install Rust
         uses: dtolnay/rust-toolchain@stable
       - name: Cache Rust dependencies
