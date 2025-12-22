@@ -1,7 +1,6 @@
 services:
   db:
-    image: postgres:17-alpine
-    restart: unless-stopped
+    image: postgres:18-alpine
     container_name: db
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d test_db"]
@@ -12,7 +11,6 @@ services:
     expose:
       - 5432
     environment:
-      - PGDATA=/var/lib/postgresql/data/pgdata
       - POSTGRES_PASSWORD=testPassword
       - POSTGRES_USER=postgres
       - POSTGRES_DB=test_db
@@ -20,7 +18,9 @@ services:
       - sqlx-test-db-data:/var/lib/postgresql/data
 
   migrations:
-    image: ghcr.io/sanders41/sqlx-migration-runner:latest
+    build:
+      context: ../
+      dockerfile: Dockerfile
     container_name: migrations
     environment:
       - POSTGRES_PASSWORD=testPassword
