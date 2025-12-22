@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres:17-alpine
+    image: postgres:18-alpine
     restart: unless-stopped
     container_name: db
     healthcheck:
@@ -20,7 +20,8 @@ services:
       - sqlx-test-db-data:/var/lib/postgresql/data
 
   migrations:
-    image: ghcr.io/sanders41/sqlx-migration-runner:latest
+    build:
+      context: ../Dockerfile
     container_name: migrations
     environment:
       - POSTGRES_PASSWORD=testPassword
