@@ -8,7 +8,7 @@ Currently only supports PostgreSQL. Make sure to mount the local `migrations` di
 ```yaml
 services:
   db:
-    image: postgres:17-alpine
+    image: postgres:18-alpine
     restart: unless-stopped
     container_name: db
     healthcheck:
@@ -20,7 +20,6 @@ services:
     expose:
       - 5432
     environment:
-      - PGDATA=/var/lib/postgresql/data/pgdata
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD?Variable not set}
       - POSTGRES_USER=${POSTGRES_USER?Variable not set}
       - POSTGRES_DB=${POSTGRES_DB?Variable not set}
