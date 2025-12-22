@@ -21,7 +21,8 @@ services:
 
   migrations:
     build:
-      context: ../Dockerfile
+      context: ../
+      dockerfile: Dockerfile
     container_name: migrations
     environment:
       - POSTGRES_PASSWORD=testPassword
