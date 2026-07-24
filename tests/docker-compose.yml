@@ -15,7 +15,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_DB=test_db
     volumes:
-      - sqlx-test-db-data:/var/lib/postgresql/data
+      - sqlx-test-db-data:/var/lib/postgresql
 
   migrations:
     build:
