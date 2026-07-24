@@ -6,6 +6,13 @@ on:
       - main
   pull_request:
 jobs:
+  prek:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: j178/prek-action@v2
+        env:
+          PREK_SKIP: no-commit-to-branch
   docker-build-and-test:
     runs-on: ubuntu-latest
     steps:
