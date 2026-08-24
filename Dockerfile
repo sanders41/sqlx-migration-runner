@@ -6,7 +6,7 @@ RUN apk add --no-cache \
     openssl-libs-static \
     pkgconfig
 
-RUN cargo install sqlx-cli --no-default-features -F native-tls -F postgres
+RUN cargo install --locked sqlx-cli --no-default-features -F native-tls -F postgres
 
 
 FROM alpine:3.22 AS runner
